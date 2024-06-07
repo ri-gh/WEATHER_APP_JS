@@ -1,4 +1,3 @@
-// source: https://youtu.be/VaDUGPMjzOM
 const weatherForm = document.querySelector('.weatherForm');
 const cityInput = document.querySelector('.cityInput');
 const card = document.querySelector('.card');
@@ -80,10 +79,7 @@ function displayWeatherInfo(data){
 }
 
 function getWeatherEmoji(weatherId){
-    //voir les id codes sur le site de openweatherapi (35 min' du tuto)
-    //touche 'Windows' + ';' pour faire apparaitre les emojis
-    //le switch vérifie la condition true pour chacun des cas exposés
-    //source https://youtu.be/z2fcWdoph4U
+    //voir les id codes sur le site de openweatherapi
     switch(true){
             case (weatherId >= 200 && weatherId < 300):
                 return "⛈️";
@@ -107,7 +103,7 @@ function getWeatherEmoji(weatherId){
 function displayError(message){
     const errorDisplay = document.createElement("p")
     errorDisplay.textContent = message
-    // on ajoute à la classe 'errorDisplay' du css
+    // on ajoute l'element à la classe 'errorDisplay' du css
     errorDisplay.classList.add("errorDisplay")
 
     // on réinitialise le contenu de la classe card
