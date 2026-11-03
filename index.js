@@ -74,7 +74,11 @@ function displayWeatherInfo(data){
     humidityDisplay.textContent = `Humidity: ${humidity}%`
     descDisplay.textContent = description
     weatherEmoji.textContent = getWeatherEmoji(id)
-    currentDateDisplay.textContent = `${new Date(currentDateTime * 1000).toDateString()}`
+    currentDateDisplay.textContent = `${new Intl.DateTimeFormat("en-GB", {
+            weekday: "long",
+            day: "numeric",
+            year: "numeric"
+            }).format(currentDateTime * 1000).toString()}`
     sunriseDisplay.textContent = `🌅 Sunrise: ${new Date((sunrise + timezone) * 1000).toUTCString().slice(16,22)}`
     sunsetDisplay.textContent =`🌇 Sunset: ${new Date((sunset + timezone) * 1000).toUTCString().slice(16,22)}`
 
