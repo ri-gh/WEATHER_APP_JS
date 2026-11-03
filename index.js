@@ -51,6 +51,7 @@ function displayWeatherInfo(data){
     // on reset le contenu de la classe .card
     card.textContent = "";
     card.style.display= "flex"
+    const descriptionCapitalized = description.charAt(0).toUpperCase() + description.slice(1)
     
     // on crée des éléments dans le DOM
     const cityDisplay = document.createElement("h1")
@@ -72,7 +73,7 @@ function displayWeatherInfo(data){
     minTempDisplay.textContent = `Minimum temp: ${(temp_min - 273.15).toFixed(1) }°C`
     maxTempDisplay.textContent = `Maximum temp: ${(temp_max - 273.15).toFixed(1) }°C`
     humidityDisplay.textContent = `Humidity: ${humidity}%`
-    descDisplay.textContent = description
+    descDisplay.textContent = descriptionCapitalized
     weatherEmoji.textContent = getWeatherEmoji(id)
     currentDateDisplay.textContent = `${new Intl.DateTimeFormat("en-GB", {
             weekday: "long",
