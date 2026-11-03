@@ -56,10 +56,16 @@ p{
     margin-bottom: 25px;
 
 }
-.humidityDisplay{
+.humidityDisplay, .currentDateDisplay{
     font-weight: bold;
     margin-bottom: 25px;
 }
+
+.sunriseDisplay, .sunsetDisplay{
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
 .descDisplay{
     font-style: italic;
     font-weight: bold;
