@@ -56,12 +56,8 @@ p{
     margin-bottom: 25px;
 
 }
-.humidityDisplay, .currentDateDisplay{
-    font-weight: bold;
-    margin-bottom: 25px;
-}
 
-.sunriseDisplay, .sunsetDisplay{
+.humidityDisplay, .currentDateDisplay, .sunriseDisplay, .sunsetDisplay{
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -70,6 +66,7 @@ p{
     font-style: italic;
     font-weight: bold;
     font-size: 2rem;
+    margin-bottom: 25px;
 }
 .weatherEmoji{
     margin: 0;

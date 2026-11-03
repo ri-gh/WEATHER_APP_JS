@@ -41,7 +41,7 @@ async function getWeatherData(city){
 function displayWeatherInfo(data){
     //on destructure les objets et les array d'objets
     const { name: city,
-            main: {temp,humidity},
+            main: {temp, feels_like, temp_min, temp_max, humidity},
             weather:[{description,id}],
             dt: currentDateTime,
             sys: {country, sunrise, sunset},
@@ -55,6 +55,9 @@ function displayWeatherInfo(data){
     // on crée des éléments dans le DOM
     const cityDisplay = document.createElement("h1")
     const tempDisplay = document.createElement("p")
+    const feelsLikeDisplay = document.createElement("p")
+    const minTempDisplay = document.createElement("p")
+    const maxTempDisplay = document.createElement("p")
     const humidityDisplay = document.createElement("p")
     const descDisplay = document.createElement("p")
     const weatherEmoji = document.createElement("p")
@@ -65,18 +68,24 @@ function displayWeatherInfo(data){
     // on ajoute le texte à l'élément html
     cityDisplay.textContent = city + ` (${country})`
     tempDisplay.textContent = `${(temp - 273.15).toFixed(1) }°C` //pour avoir la temp de Kalvin à Celsius et arrondir à 1 chiffre
+    feelsLikeDisplay.textContent = `Feels like: ${(feels_like - 273.15).toFixed(1) }°C`
+    minTempDisplay.textContent = `Minimum temp: ${(temp_min - 273.15).toFixed(1) }°C`
+    maxTempDisplay.textContent = `Maximum temp: ${(temp_max - 273.15).toFixed(1) }°C`
     humidityDisplay.textContent = `Humidity: ${humidity}%`
     descDisplay.textContent = description
     weatherEmoji.textContent = getWeatherEmoji(id)
     currentDateDisplay.textContent = `${new Date(currentDateTime * 1000).toDateString()}`
-    sunriseDisplay.textContent = `Sunrise : ${new Date((sunrise + timezone) * 1000).toUTCString().slice(16,25)}`
-    sunsetDisplay.textContent =`Sunset : ${new Date((sunset + timezone) * 1000).toUTCString().slice(16,25)}`
+    sunriseDisplay.textContent = `Sunrise: ${new Date((sunrise + timezone) * 1000).toUTCString().slice(16,25)}`
+    sunsetDisplay.textContent =`Sunset: ${new Date((sunset + timezone) * 1000).toUTCString().slice(16,25)}`
 
 
     //on ajoute l'élément à une classe du fichier css
     cityDisplay.classList.add('cityDisplay')
     tempDisplay.classList.add('tempDisplay')
     humidityDisplay.classList.add('humidityDisplay')
+    feelsLikeDisplay.classList.add('sunriseDisplay')
+    minTempDisplay.classList.add('sunriseDisplay')
+    maxTempDisplay.classList.add('sunriseDisplay')
     descDisplay.classList.add('descDisplay')
     weatherEmoji.classList.add('weatherEmoji')
     currentDateDisplay.classList.add('currentDateDisplay')
@@ -86,12 +95,16 @@ function displayWeatherInfo(data){
     //on append l'element à l'élément de la classe 'card'
     card.appendChild(cityDisplay)
     card.appendChild(tempDisplay)
-    card.appendChild(humidityDisplay)
-    card.appendChild(descDisplay)
-    card.appendChild(weatherEmoji)
     card.appendChild(currentDateDisplay)
     card.appendChild(sunriseDisplay)
     card.appendChild(sunsetDisplay)
+    card.appendChild(weatherEmoji)
+    card.appendChild(descDisplay)
+    card.appendChild(humidityDisplay)
+    card.appendChild(feelsLikeDisplay)
+    card.appendChild(minTempDisplay)
+    card.appendChild(maxTempDisplay)
+
 
 }
 
