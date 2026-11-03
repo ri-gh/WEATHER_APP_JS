@@ -67,7 +67,7 @@ function displayWeatherInfo(data){
     
     // on ajoute le texte à l'élément html
     cityDisplay.textContent = city + ` (${country})`
-    tempDisplay.textContent = `${(temp - 273.15).toFixed(1) }°C` //pour avoir la temp de Kalvin à Celsius et arrondir à 1 chiffre
+    tempDisplay.textContent = `🌡️${(temp - 273.15).toFixed(1) }°C` //pour avoir la temp de Kalvin à Celsius et arrondir à 1 chiffre
     feelsLikeDisplay.textContent = `Feels like: ${(feels_like - 273.15).toFixed(1) }°C`
     minTempDisplay.textContent = `Minimum temp: ${(temp_min - 273.15).toFixed(1) }°C`
     maxTempDisplay.textContent = `Maximum temp: ${(temp_max - 273.15).toFixed(1) }°C`
@@ -75,8 +75,8 @@ function displayWeatherInfo(data){
     descDisplay.textContent = description
     weatherEmoji.textContent = getWeatherEmoji(id)
     currentDateDisplay.textContent = `${new Date(currentDateTime * 1000).toDateString()}`
-    sunriseDisplay.textContent = `Sunrise: ${new Date((sunrise + timezone) * 1000).toUTCString().slice(16,25)}`
-    sunsetDisplay.textContent =`Sunset: ${new Date((sunset + timezone) * 1000).toUTCString().slice(16,25)}`
+    sunriseDisplay.textContent = `🌅 Sunrise: ${new Date((sunrise + timezone) * 1000).toUTCString().slice(16,22)}`
+    sunsetDisplay.textContent =`🌇 Sunset: ${new Date((sunset + timezone) * 1000).toUTCString().slice(16,22)}`
 
 
     //on ajoute l'élément à une classe du fichier css

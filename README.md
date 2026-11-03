@@ -1,4 +1,4 @@
-## Get☀️weather⛈️data🌈
+## Get ☀️ weather ⛈️ data 🌈
 
 Here's a single webpage in vanilla _Javascript_ to get weather data by requesting an `API`.
 
@@ -25,3 +25,5 @@ function getApiKey(){
 `$docker run -p 8000:80 my-app:latest`
 
 Show page on a web explorer page @http://localhost:8000/
+
+Emojis can be found [here](https://emojipedia.org/).
